@@ -4,3 +4,11 @@ pipeline:
     commands:
       - echo 'build ok'
 
+  notify:
+    image: plugins/slack 
+    webhook_url: $$SLACK_URL
+    channel: general
+    template: >
+      Build #{{ build.number }} finished with a {{ build.status }} status. {{ build.user }} / {{ build }}
+    when:
+      status: [ success, failure ]
