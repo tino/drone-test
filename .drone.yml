@@ -1,4 +1,6 @@
-mage: docker:1.12-dind
-script:
-    -  ./.drone/build.sh
+pipeline: 
+  build: 
+    image: docker:1.12-dind
+    commands:
+      - echo 'build ok'
 
