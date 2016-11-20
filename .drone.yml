@@ -1,0 +1,4 @@
+mage: docker:1.12-dind
+script:
+    -  ./.drone/build.sh
+
