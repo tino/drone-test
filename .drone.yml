@@ -6,7 +6,7 @@ pipeline:
 
   notify:
     image: plugins/slack 
-    webhook_url: $SLACK_URL
+    webhook_url: $SLACK_WEBHOOK
     channel: general
     template: >
       Build #{{ build.number }} finished with a {{ build.status }} status. {{ build.user }} / {{ build }}
